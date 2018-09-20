@@ -9,7 +9,7 @@ const prepareStateForward = (given_word) => {
             word,
             chars,
             attempt: 1,
-            guess: "",
+            guess: [],
             complete: false
         }
 }
@@ -23,7 +23,8 @@ export default class WordCard extends Component{
 
 
     activateHandler = (c) => {
-        let guess = this.state.guess+c
+        
+        let guess = [this.state.guess]+c
 
         console.log("guess : " + guess.length)
         console.log("word : " + this.state.word.length)
@@ -31,9 +32,9 @@ export default class WordCard extends Component{
         this.setState({guess})
         if(guess.length == this.state.word.length){
             if(guess == this.state.word){
-                this.setState({guess: "", complete: true})
+                this.setState({guess: [], complete: true})
             }else{
-                this.setState({guess: "", attempt: this.state.attempt+1})
+                this.setState({guess: [], attempt: this.state.attempt+1})
             }
         }
 
