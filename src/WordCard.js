@@ -27,19 +27,19 @@ export default class WordCard extends Component{
 
         let guess = [this.state.guess]+c
 
-        if(this.attempt < 5){
+        if(this.state.attempt <= 5){
             this.setState({guess})
             if(guess.length == this.state.word.length){
                 if(guess == this.state.word){
                     this.setState({guess: [], complete: true})
                 }else{
                     this.setState({guess: [], attempt: this.state.attempt+1})
+                    if(this.state.attempt==5)
+                        this.setState({lose:true})
                 }
             }
         }
-        else {
-            this.setState({lose:true})
-        }
+
 
     }
 
