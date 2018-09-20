@@ -23,7 +23,7 @@ export default class WordCard extends Component{
 
 
     activateHandler = (c) => {
-        
+
         let guess = [this.state.guess]+c
 
         console.log("guess : " + guess.length)
@@ -48,7 +48,9 @@ export default class WordCard extends Component{
                     (c,i)=> <CharacterCard value = {c} key = {i} attempt={this.state.attempt} activateHandler={this.activateHandler}/> 
                 )
             }
+            Your attempt : {this.state.attempt}
             </div>
+
         )
     }
 }
