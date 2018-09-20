@@ -49,6 +49,9 @@ export default class WordCard extends Component{
                 )
             }
             Your attempt : {this.state.attempt}
+            
+            <h1>{this.state.complete? "You Win" : ""}</h1>
+
             </div>
 
         )
