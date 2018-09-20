@@ -51,6 +51,7 @@ export default class WordCard extends Component{
                     (c,i)=> <CharacterCard value = {c} key = {i} attempt={this.state.attempt} activateHandler={this.activateHandler}/> 
                 )
             }
+            
             <p>Your attempt : {this.state.attempt}</p>
             <p>attempt left : {5- this.state.attempt}</p>
             
